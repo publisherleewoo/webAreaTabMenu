@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script src="C:/Users/leewoo/AppData/Roaming/EditPlus/jquery.min.js"></script>
+<style>
+  *{margin:0; padding:0}
+	li{list-style:none; display:inline-block;}
+</style>
+ </head>
+ <body>
+ 
+   <nav id="tabs">
+	<ul role="tablist">
+	 <li><a id="tab1" href="#tabs-1" role="tab" aria-controls="tabs-1">menu</a></li>
+	 <li><a id="tab2" href="#tabs-2" role="tab" aria-controls="tabs-2">menu2</a></li> 
+	 <li><a id="tab3" href="#tabs-3" role="tab" aria-controls="tabs-3">menu3</a></li> 
+	</ul>
+  <div id="tabs-1" role="tabpanel" aria-labelledby="tab1">
+	<a href="#">depthMenu</a> 
+	<a href="#">depthMenu</a> 
+	<a href="#">depthMenu</a> 
+  </div>
+  <div id="tabs-2" role="tabpanel" aria-labelledby="tab2">
+	 <a href="#">depthMenu2</a> 
+	 <a href="#">depthMenu3</a> 
+	 <a href="#">depthMenu4</a> 
+  </div>
+  <div id="tabs-3" role="tabpanel" aria-labelledby="tab3">
+	 <a href="#">depthMenu5</a> 
+	 <a href="#">depthMenu6</a> 
+	 <a href="#">depthMenu7</a> 
+  </div>
+</nav>
+
+<!--
+  <nav id="tabs">
+    <a href="#tabs-1">menu</a>
+    <a href="#tabs-2">menu2</a>
+    <a href="#tabs-3">menu3</a>
+  <div id="tabs-1">
+     <a href="#">depthMenu</a>
+     <a href="#">depthMenu</a>
+  </div>
+  <div id="tabs-2">
+     <a href="#">depthMenu2</a>
+     <a href="#">depthMenu3</a>
+     <a href="#">depthMenu4</a>
+  </div>
+  <div id="tabs-3">
+      <a href="#">depthMenu5</a>
+      <a href="#">depthMenu6</a>
+      <a href="#">depthMenu7</a>
+  </div>
+</nav>
+-->
+   <script>
+  $('[id^=tabs-]').hide()
+ $('nav > ul > li > a').on('click',function(e){
+	var idx = $(this).parents().index();
+	$('nav > div').eq(idx).show().siblings('div').hide()
+ 	e.preventDefault();
+ })
+ </script>
+ 
+ </body>
+</html>
